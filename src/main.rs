@@ -1,6 +1,7 @@
 use std::cmp::Ordering;
 use std::io;
 
+use guessing_game::{check_guess, parse_guess};
 use rand::prelude::*;
 
 fn main() {
@@ -10,22 +11,25 @@ fn main() {
     loop {
         println!("Please input your guess.");
 
-        let mut guess = String::new();
+        let mut input = String::new();
 
         io::stdin()
-            .read_line(&mut guess)
+            .read_line(&mut input)
             .expect("Failed to read line");
 
-        let guess: u32 = match guess.trim().parse() {
+        let guess = match parse_guess(&input) {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("Please type whole number.");
+                continue;
+            }
         };
 
         println!("You guessed: {guess}");
 
-        match guess.cmp(&secret_number) {
+        match check_guess(guess, secret_number) {
             Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
+            Ordering::Greater => println!("Too bing!"),
             Ordering::Equal => {
                 println!("YOU WIN!");
                 break;
