@@ -1,4 +1,6 @@
 # Guessing Game
+[![CI](https://github.com/UltGithub/guessing-game/actions/workflows/ci.yml/badge.svg)](https://github.com/UltGithub/guessing-game/actions/workflows/ci.yml)
+
 
 A command-line number guessing game written in Rust. The computer picks a random number between 1 and 100, and you try to guess it.
 After each guess you are told whether it was too small or too big.
