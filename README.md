@@ -17,6 +17,18 @@ cd guessing-game
 cargo run --release
 ```
 
+## Options
+
+```bash
+cargo run --release -- --max 1000 --attempts 10
+```
+
+| Option | Description | Default |
+| --- | --- | --- |
+| `-m, --max <N>` | Upper bound of the secret number | 100 |
+| `-a, --attempts <N>` | Maximum number of attempts | unlimited |
+
+
 ## Example
 
 ```text
