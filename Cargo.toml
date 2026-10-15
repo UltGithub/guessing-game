@@ -2,6 +2,10 @@
 name = "guessing_game"
 version = "0.1.0"
 edition = "2024"
+description = "A simple command-line number guessing game written in Rust"
+license = "MIT"
+repository = "https://github.com/UltGithub/guessing-game"
+readme = "README.md"
 
 [dependencies]
 rand = "0.10.1"
